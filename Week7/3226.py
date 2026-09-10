@@ -3,8 +3,12 @@ def main():
     """P8"""
     n = float(input())
     k = int(input())
-    r = 0.0381
 
-    fv = n * ((1 + r) ** k)
-    print(f"{fv:.2f}")
+    price = n
+
+    for i in range(k):
+        increase = price * 0.0381
+        increase = int(increase * 100) / 100
+        price += increase
+    print(f"{price:.2f}")
 main()
